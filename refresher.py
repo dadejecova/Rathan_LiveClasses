@@ -56,13 +56,19 @@ print (f"And x > 15 & y < 15: {x > 15 and y < 15}, Or x > 15 or y < 15: {x > 15 
 # 3. STRINGS & USER INPUT
 # ------------------------------------------------
 # ✅ Strings are immutable
+print (f"--- Strings ---")
+learning_language = "I'm learning Python"
+sample_string = "Hello, World"
+FullText = sample_string + " " + learning_language + "!"
+print (f"Full Text: {FullText}")
+print (f"Original String: {learning_language} and {sample_string}")
 # ✅ Use f-strings for formatting
 print (f"--- Strings & User Input ---")
 
 # Getting input
-input_name = input("Enter your name: ")
-input_age = input("Enter your age: ")
-print (f"Hello, {input_name}! You are {input_age} years old.")
+# input_name = input("Enter your name: ")
+# input_age = input("Enter your age: ")
+# print (f"Hello, {input_name}! You are {input_age} years old.")
 
 
 # ------------------------------------------------
@@ -73,12 +79,20 @@ print (f"--- Collection Data Types ---")
 # List - mutable
 print (f"--- List ---")
 
+students = ["Alice", "Bob", "Charlie"]
+print (f"Students: {students}")
+
 # Tuple - immutable
 print (f"--- Tuple ---")
 
+colors = ("Red", "Green", "Blue")
+print (f"Colors: {colors}")
 
 # Set - unique
 print (f"--- Set ---")
+
+unique_numbers = {2, 1, 2, 3, 2, 1}
+print (f"Unique Numbers: {unique_numbers}")
 
 # Dictionary - key-value pair
 print (f"--- Dictionary ---")
