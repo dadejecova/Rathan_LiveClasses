@@ -10,11 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    {% if not user.is_authenticated %}
     <a href="{% url 'login' %}">Login</a>&emsp;
-    <a href="{% url 'register' %}">Register</a>
+    <a href="{% url 'register' %}">Register</a>&emsp;
+    {% else %}
+    You are logged in as: {{ user }} &emsp;
+    <a href="{% url 'logout' %}">Logout</a>
+    {% endif %}
     
+
     <h2>- Employees Record -</h2>
+    {% if perms.employees.add_employee %}
     <a href="{% url 'add_employee' %}" style="float: right; margin-right: 200px;">Add Employee</a>
+    {% endif %}
     <br><br>
     <table>
         <thead>

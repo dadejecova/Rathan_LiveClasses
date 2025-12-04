@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from . models import Employee
 from .forms import EmployeeForm
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Decide with url pattern to create
 # created url patter in the main urls. and forward it to emlpoyees.urls
@@ -16,6 +17,8 @@ def employee_detail(request, id):
     return render(request, 'employee_detail.html', context)
 
 
+@login_required
+@permission_required('employees.add_employee',raise_exception=True)
 def add_employee(request):
     if request.method == 'POST':
         form = EmployeeForm(request.POST, request.FILES)
